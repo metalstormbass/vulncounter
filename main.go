@@ -147,6 +147,8 @@ func main() {
 
 		action = "rmi"
 		docker(image_name, action)
+
+		grype(image_name)
 	}
 }
 
@@ -201,7 +203,7 @@ func docker(image_name string, action string) {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
-	grype(image_name)
+
 }
 
 func extractContainerInfo(line string) (string, error) {
